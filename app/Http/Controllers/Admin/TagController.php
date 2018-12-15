@@ -8,6 +8,6 @@ class TagController extends Controller
 {
     public function index()
     {
-        return 'tags.index';
+        return view('admin.tags.index');
     }
 }
