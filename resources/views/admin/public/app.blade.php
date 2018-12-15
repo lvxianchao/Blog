@@ -18,7 +18,7 @@
             <div class="layui-body {{ route_class() . '-page' }}" id="app">
                 <div class="container-fluid pt-3">
                     @include('admin.public._errors')
-                    @include('admin.public._message')
+                    @include('admin.public._messages')
                     @yield('content')
                 </div>
             </div>
