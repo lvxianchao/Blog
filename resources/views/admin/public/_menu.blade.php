@@ -15,6 +15,13 @@
                     <span>标签管理</span>
                 </a>
             </li>
+            {{--文章管理--}}
+            <li class="layui-nav-item {{ active_class(if_route_pattern('admin.posts.*'), 'layui-this') }}">
+                <a href="{{ route('admin.posts.index') }}">
+                    <i class="fa fa-columns"></i>
+                    <span>文章管理</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

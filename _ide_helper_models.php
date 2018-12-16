@@ -12,11 +12,35 @@
 
 namespace App\Models{
 /**
- * App\Models\Tag
+ * Class Post
  *
+ * @package App\Models
+ * @property int $id
+ * @property string $title 文章标签
+ * @property string $slug 标签翻译，有利于 SEO
+ * @property string|null $content 文章内容
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereUpdatedAt($value)
+ */
+	class Post extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * Class Tag
+ *
+ * @package App\Models
  * @property int $id
  * @property string $name 标签名称
- * @property int $posts_count 关联文章数量
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag newModelQuery()
@@ -25,7 +49,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag wherePostsCount($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereUpdatedAt($value)
  */
 	class Tag extends \Eloquent {}
