@@ -12,4 +12,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', 'Admin\DashboardController@index')->name('dashboard');
     // 标签管理
     Route::resource('tags', 'Admin\TagController', ['except' => ['show']])->names('tags');
+    // 文章管理
+    Route::resource('posts', 'Admin\PostController')->names('posts');
 });
