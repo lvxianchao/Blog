@@ -1,6 +1,6 @@
 @extends('admin.public.app')
 
-@section('title', '标签')
+@section('title', '标签列表')
 
 @section('content')
     @include('admin.public._tab', ['route' => 'tags', 'title' => '标签'])
@@ -19,13 +19,13 @@
             <tr>
                 <td>{{ $tag->id }}</td>
                 <td>{{ $tag->name }}</td>
-                <td>3</td>
+                <td>666</td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
                 <td>
-                    <a href="{{ route('admin.tags.edit', $tag) }}" class="btn btn-outline-dark btn-sm">编辑</a>
-                    <a href="" class="btn btn-outline-danger btn-sm">删除</a>
-                    <form action="{{ route('admin.tags.destroy', $tag) }}">
+                    <a href="{{ route('admin.tags.edit', $tag) }}" class="btn btn-primary btn-sm">编辑</a>
+                    <button class="btn btn-danger btn-sm">删除</button>
+                    <form action="{{ route('admin.tags.destroy', $tag) }}" method="post">
                         @csrf
                         @method('DELETE')
                     </form>
@@ -35,4 +35,14 @@
     </table>
 
     <div class="d-md-flex justify-content-center">{{ $tags->links() }}</div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(function () {
+            $('.btn-danger').on('click', function () {
+                $(this).next('form').submit();
+            });
+        });
+    </script>
 @endsection
