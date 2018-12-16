@@ -47,6 +47,7 @@
             element: document.getElementById('editor'),
             spellChecker: false,
             tabSize: 4,
+            autoDownloadFontAwesome: false,
             toolbar: [
                 "bold", "italic", "heading", "|", "quote", "code", "table",
                 "horizontal-rule", "unordered-list", "ordered-list", "|",
