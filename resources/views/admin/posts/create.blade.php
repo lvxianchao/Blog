@@ -18,7 +18,31 @@
 
                 <div class="form-group">
                     <label for="name">标签</label>
-                    <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" required>
+                    <div class="ui fluid multiple search selection dropdown form-control-sm">
+                        <input name="tags" type="hidden">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">标签</div>
+                        <div class="menu">
+                            <div class="item" data-value="angular">Angular</div>
+                            <div class="item" data-value="css">CSS</div>
+                            <div class="item" data-value="design">Graphic Design</div>
+                            <div class="item" data-value="ember">Ember</div>
+                            <div class="item" data-value="html">HTML</div>
+                            <div class="item" data-value="ia">Information Architecture</div>
+                            <div class="item" data-value="javascript">Javascript</div>
+                            <div class="item" data-value="mech">Mechanical Engineering</div>
+                            <div class="item" data-value="meteor">Meteor</div>
+                            <div class="item" data-value="node">NodeJS</div>
+                            <div class="item" data-value="plumbing">Plumbing</div>
+                            <div class="item" data-value="python">Python</div>
+                            <div class="item" data-value="rails">Rails</div>
+                            <div class="item" data-value="react">React</div>
+                            <div class="item" data-value="repair">Kitchen Repair</div>
+                            <div class="item" data-value="ruby">Ruby</div>
+                            <div class="item" data-value="ui">UI Design</div>
+                            <div class="item" data-value="ux">User Experience</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -38,10 +62,12 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('vendor/simplemde/simplemde.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/semantic/semantic.min.css') }}">
 @endsection
 
 @section('scripts')
     <script src="{{ asset('vendor/simplemde/simplemde.min.js') }}"></script>
+    <script src="{{ asset('vendor/semantic/semantic.min.js') }}"></script>
     <script>
         let simplemde = new SimpleMDE({
             element: document.getElementById('editor'),
@@ -86,6 +112,11 @@
                     title: "Markdown 语法！",
                 },
             ],
+        });
+        $(function () {
+            $('.ui.dropdown').dropdown({
+                allowAdditions: true,
+            });
         });
     </script>
 @endsection
