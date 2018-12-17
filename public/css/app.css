@@ -3053,6 +3053,11 @@
   clip: auto;
 }
 
+.layui-layout-admin .layui-body {
+  padding-bottom: 50px;
+  bottom: 0;
+}
+
 .table td,
 .table th {
   vertical-align: middle;
