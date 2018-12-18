@@ -19,35 +19,20 @@
                 <div class="form-group">
                     <label for="name">标签</label>
                     <div class="ui fluid multiple search selection dropdown form-control-sm">
-                        <input name="tags" type="hidden">
+                        <input type="hidden" name="tags">
                         <i class="dropdown icon"></i>
                         <div class="default text">标签</div>
                         <div class="menu">
-                            <div class="item" data-value="angular">Angular</div>
-                            <div class="item" data-value="css">CSS</div>
-                            <div class="item" data-value="design">Graphic Design</div>
-                            <div class="item" data-value="ember">Ember</div>
-                            <div class="item" data-value="html">HTML</div>
-                            <div class="item" data-value="ia">Information Architecture</div>
-                            <div class="item" data-value="javascript">Javascript</div>
-                            <div class="item" data-value="mech">Mechanical Engineering</div>
-                            <div class="item" data-value="meteor">Meteor</div>
-                            <div class="item" data-value="node">NodeJS</div>
-                            <div class="item" data-value="plumbing">Plumbing</div>
-                            <div class="item" data-value="python">Python</div>
-                            <div class="item" data-value="rails">Rails</div>
-                            <div class="item" data-value="react">React</div>
-                            <div class="item" data-value="repair">Kitchen Repair</div>
-                            <div class="item" data-value="ruby">Ruby</div>
-                            <div class="item" data-value="ui">UI Design</div>
-                            <div class="item" data-value="ux">User Experience</div>
+                            @foreach($tags as $tag)
+                                <div class="item" data-value="{{ $tag->id }}">{{ $tag->name }}</div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="name">内容</label>
-                    <input type="text" class="form-control" name="content" id="editor" value="{{ old('content') }}" required>
+                    <input type="text" class="form-control" name="content" id="editor" value="{{ old('content') }}">
                 </div>
 
                 <div class="row">
@@ -62,12 +47,10 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('vendor/simplemde/simplemde.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/semantic/semantic.min.css') }}">
 @endsection
 
 @section('scripts')
     <script src="{{ asset('vendor/simplemde/simplemde.min.js') }}"></script>
-    <script src="{{ asset('vendor/semantic/semantic.min.js') }}"></script>
     <script>
         let simplemde = new SimpleMDE({
             element: document.getElementById('editor'),
@@ -116,6 +99,13 @@
         $(function () {
             $('.ui.dropdown').dropdown({
                 allowAdditions: true,
+            });
+
+            $('form').on('keydown', function (event) {
+                console.log('fuck');
+                if (event.keyCode === 13) {
+                    return false;
+                }
             });
         });
     </script>
