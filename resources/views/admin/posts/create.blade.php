@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label for="name">标签</label>
                     <div class="ui fluid multiple search selection dropdown form-control-sm">
-                        <input type="hidden" name="tags">
+                        <input type="hidden" name="tags" value="{{ old('tags') }}">
                         <i class="dropdown icon"></i>
                         <div class="default text">标签</div>
                         <div class="menu">

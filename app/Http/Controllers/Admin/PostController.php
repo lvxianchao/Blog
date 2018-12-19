@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Handlers\SlugTranslateHandler;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
@@ -45,7 +44,28 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        dd($request->all());
+        // 创建文章
+        $post = Post::create($request->all());
+        
+        // 检测处理新添加标签
+        if ($request->tags) {
+            $tags = explode(',', $request->tags);
+            
+            $tags = collect($tags)->map(function ($tag) {
+                if (!is_numeric($tag)) {
+                    // 检测是否已存在同名标签，不存在则创建新标签并填充关联数据。
+                    $exists = Tag::whereName($tag)->first();
+                    
+                    return $exists ? $exists->id : Tag::create(['name' => $tag])->id;
+                }
+                
+                return $tag;
+            });
+            
+            $post->tags()->attach($tags);
+        }
+        
+        return redirect()->route('admin.posts.index')->with('success', '添加文章成功');
     }
     
     /**

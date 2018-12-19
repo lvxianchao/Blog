@@ -15,4 +15,24 @@ class Tag extends Model
      * @var array
      */
     protected $fillable = ['name'];
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class);
+    }
+    
+    /**
+     * 处理关联标签
+     *
+     * @param string $tags
+     *
+     * @return static
+     */
+    public function scopeRelateTags(string $tags)
+    {
+    
+    }
 }
