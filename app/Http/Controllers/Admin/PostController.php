@@ -21,8 +21,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        $result = (new SlugTranslateHandler())->translate('我草你妈');
-        dd($result);
         $posts = Post::orderByDesc('id')->paginate(5);
         
         return view('admin.posts.index', compact('posts'));
