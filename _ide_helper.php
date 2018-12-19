@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.17 on 2018-12-16 17:27:20.
+ * Generated for Laravel 5.7.17 on 2018-12-19 22:59:02.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -13892,6 +13892,133 @@ namespace HieuLe\Active\Facades {
  
 }
 
+namespace Overtrue\LaravelPinyin\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class Pinyin {
+        
+        /**
+         * Convert string to pinyin.
+         *
+         * @param string $string
+         * @param string $option
+         * @return array 
+         * @static 
+         */ 
+        public static function convert($string, $option = 'none')
+        {
+            return \Overtrue\Pinyin\Pinyin::convert($string, $option);
+        }
+        
+        /**
+         * Convert string (person name) to pinyin.
+         *
+         * @param string $stringName
+         * @param string $option
+         * @return array 
+         * @static 
+         */ 
+        public static function name($stringName, $option = 'none')
+        {
+            return \Overtrue\Pinyin\Pinyin::name($stringName, $option);
+        }
+        
+        /**
+         * Return a pinyin permalink from string.
+         *
+         * @param string $string
+         * @param string $delimiter
+         * @return string 
+         * @static 
+         */ 
+        public static function permalink($string, $delimiter = '-')
+        {
+            return \Overtrue\Pinyin\Pinyin::permalink($string, $delimiter);
+        }
+        
+        /**
+         * Return first letters.
+         *
+         * @param string $string
+         * @param string $delimiter
+         * @return string 
+         * @static 
+         */ 
+        public static function abbr($string, $delimiter = '')
+        {
+            return \Overtrue\Pinyin\Pinyin::abbr($string, $delimiter);
+        }
+        
+        /**
+         * Chinese phrase to pinyin.
+         *
+         * @param string $string
+         * @param string $delimiter
+         * @param string $option
+         * @return string 
+         * @static 
+         */ 
+        public static function phrase($string, $delimiter = '', $option = 'none')
+        {
+            return \Overtrue\Pinyin\Pinyin::phrase($string, $delimiter, $option);
+        }
+        
+        /**
+         * Chinese to pinyin sentense.
+         *
+         * @param string $sentence
+         * @param bool $withTone
+         * @return string 
+         * @static 
+         */ 
+        public static function sentence($sentence, $withTone = false)
+        {
+            return \Overtrue\Pinyin\Pinyin::sentence($sentence, $withTone);
+        }
+        
+        /**
+         * Loader setter.
+         *
+         * @param \Overtrue\Pinyin\DictLoaderInterface $loader
+         * @return $this 
+         * @static 
+         */ 
+        public static function setLoader($loader)
+        {
+            return \Overtrue\Pinyin\Pinyin::setLoader($loader);
+        }
+        
+        /**
+         * Return dict loader,.
+         *
+         * @return \Overtrue\Pinyin\DictLoaderInterface 
+         * @static 
+         */ 
+        public static function getLoader()
+        {
+            return \Overtrue\Pinyin\Pinyin::getLoader();
+        }
+        
+        /**
+         * Split pinyin string to words.
+         *
+         * @param string $pinyin
+         * @param string $option
+         * @return array 
+         * @static 
+         */ 
+        public static function splitWords($pinyin, $option)
+        {
+            return \Overtrue\Pinyin\Pinyin::splitWords($pinyin, $option);
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -16323,6 +16450,8 @@ namespace  {
     class View extends \Illuminate\Support\Facades\View {}
 
     class Active extends \HieuLe\Active\Facades\Active {}
+
+    class Pinyin extends \Overtrue\LaravelPinyin\Facades\Pinyin {}
  
 }
 

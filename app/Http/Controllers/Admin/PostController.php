@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Handlers\SlugTranslateHandler;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -19,6 +21,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        $result = (new SlugTranslateHandler())->translate('我草你妈');
+        dd($result);
         $posts = Post::orderByDesc('id')->paginate(5);
         
         return view('admin.posts.index', compact('posts'));
@@ -41,7 +45,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         dd($request->all());
     }

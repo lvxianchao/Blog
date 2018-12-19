@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-12-15 00:29:19.
+    * Generated on 2018-12-19 22:59:02.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -31,6 +31,7 @@ namespace PHPSTORM_META {
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Overtrue\Pinyin\Pinyin' => \Overtrue\Pinyin\Pinyin::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
         'active' => \HieuLe\Active\Active::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
@@ -171,6 +172,7 @@ namespace PHPSTORM_META {
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Overtrue\Pinyin\Pinyin' => \Overtrue\Pinyin\Pinyin::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
         'active' => \HieuLe\Active\Active::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
@@ -311,6 +313,7 @@ namespace PHPSTORM_META {
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Overtrue\Pinyin\Pinyin' => \Overtrue\Pinyin\Pinyin::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
         'active' => \HieuLe\Active\Active::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
@@ -451,6 +454,7 @@ namespace PHPSTORM_META {
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Overtrue\Pinyin\Pinyin' => \Overtrue\Pinyin\Pinyin::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
         'active' => \HieuLe\Active\Active::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
@@ -591,6 +595,7 @@ namespace PHPSTORM_META {
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Overtrue\Pinyin\Pinyin' => \Overtrue\Pinyin\Pinyin::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
         'active' => \HieuLe\Active\Active::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
@@ -731,6 +736,7 @@ namespace PHPSTORM_META {
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Overtrue\Pinyin\Pinyin' => \Overtrue\Pinyin\Pinyin::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
         'active' => \HieuLe\Active\Active::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
@@ -871,6 +877,7 @@ namespace PHPSTORM_META {
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
+        'Overtrue\Pinyin\Pinyin' => \Overtrue\Pinyin\Pinyin::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
         'active' => \HieuLe\Active\Active::class,
         'auth' => \Illuminate\Auth\AuthManager::class,
