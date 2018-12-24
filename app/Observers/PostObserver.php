@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Handlers\SlugTranslateHandler;
+use App\Jobs\TranslateSlug;
 use App\Models\Post;
 
 /**
@@ -15,11 +15,11 @@ class PostObserver
     /**
      * @param Post $post
      */
-    public function saving(Post $post)
+    public function saved(Post $post)
     {
         // 翻译 slug
         if (!$post->slug) {
-            $post->slug = app(SlugTranslateHandler::class)->translate($post->title);
+            dispatch(new TranslateSlug($post));
         }
     }
 }
