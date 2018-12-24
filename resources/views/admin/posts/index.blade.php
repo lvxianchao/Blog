@@ -18,8 +18,10 @@
         @foreach($posts as $post)
             <tr>
                 <td>{{ $post->id }}</td>
-                <td>{{ $post->title }}</td>
-                <td>666</td>
+                <td>
+                    <a href="{{ $post->link() }}">{{ $post->title }}</a>
+                </td>
+                <td>{{ $post->tags->count() }}</td>
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
                 <td>

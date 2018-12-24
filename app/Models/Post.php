@@ -49,4 +49,16 @@ class Post extends Model
     {
         return html_entity_decode($value);
     }
+    
+    /**
+     * SEO URL
+     *
+     * @param array $params
+     *
+     * @return string
+     */
+    public function link(array $params = [])
+    {
+        return route('admin.posts.show', array_merge([$this->id, $this->slug], $params));
+    }
 }

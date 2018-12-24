@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Tag;
+use Illuminate\Http\Request;
 
 /**
  * Class PostController
@@ -63,15 +64,21 @@ class PostController extends Controller
     }
     
     /**
-     * Display the specified resource.
+     * 文章详情
      *
-     * @param  int $id
+     * @param Request $request
+     * @param Post    $post
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Request $request, Post $post)
     {
-        //
+        // URL 矫正
+        if (!empty($post->slug) && $post->slug != $request->slug) {
+            return redirect($post->link(), 301);
+        }
+        
+        return view('admin.posts.show', compact('post'));
     }
     
     /**
