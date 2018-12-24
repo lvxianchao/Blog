@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Tag;
-use Illuminate\Http\Request;
 
 /**
  * Class PostController
@@ -16,6 +15,8 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
+     * 文章列表
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -26,6 +27,8 @@ class PostController extends Controller
     }
     
     /**
+     * 创建文章
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
@@ -36,6 +39,8 @@ class PostController extends Controller
     }
     
     /**
+     * 添加文章
+     *
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -49,18 +54,7 @@ class PostController extends Controller
         
         // 检测处理新添加标签
         if ($request->tags) {
-            $tags = explode(',', $request->tags);
-            
-            $tags = collect($tags)->map(function ($tag) {
-                if (!is_numeric($tag)) {
-                    // 检测是否已存在同名标签，不存在则创建新标签并填充关联数据。
-                    $exists = Tag::whereName($tag)->first();
-                    
-                    return $exists ? $exists->id : Tag::create(['name' => $tag])->id;
-                }
-                
-                return $tag;
-            });
+            $tags = $this->tagsHandler($request->tags);
             
             $post->tags()->attach($tags);
         }
@@ -81,28 +75,44 @@ class PostController extends Controller
     }
     
     /**
-     * Show the form for editing the specified resource.
+     * 编辑文章
      *
-     * @param  int $id
+     * @param Post $post
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $tags = Tag::all();
+        
+        // 整已选中的标签字符串形式
+        $tags_string = $post->tags->map(function ($tag) {
+            return $tag->id;
+        })->toArray();
+        $tags_string = implode(',', $tags_string);
+        
+        return view('admin.posts.edit', compact('post', 'tags', 'tags_string'));
     }
     
     /**
-     * Update the specified resource in storage.
+     * 更新文章
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
+     * @param PostRequest $request
+     * @param Post        $post
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->update($request->all());
+        
+        if ($request->tags) {
+            $tags = $this->tagsHandler($request->tags);
+            
+            $post->tags()->sync($tags);
+        }
+        
+        return redirect()->route('admin.posts.index')->with('success', '更新文章成功');
     }
     
     /**
@@ -115,5 +125,26 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    /**
+     * 处理文章和标签：检测标签 是否存在，存在则返回标签 ID，不存在则添加标签并返回 ID。
+     *
+     * @param string $tags
+     *
+     * @return array|string|static
+     */
+    private function tagsHandler(string $tags)
+    {
+        return collect(explode(',', $tags))->map(function ($tag) {
+            if (!is_numeric($tag)) {
+                // 检测是否已存在同名标签，不存在则创建新标签并填充关联数据。
+                $exists = Tag::whereName($tag)->first();
+                
+                return $exists ? $exists->id : Tag::create(['name' => $tag])->id;
+            }
+            
+            return $tag;
+        });
     }
 }

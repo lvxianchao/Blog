@@ -12,11 +12,15 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     /**
+     * 可填充字段
+     *
      * @var array
      */
     protected $fillable = ['title', 'slug', 'content'];
     
     /**
+     * 关联标签模型
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function tags()
@@ -25,6 +29,8 @@ class Post extends Model
     }
     
     /**
+     * 写入数据时，去除 content 字段实体字符
+     *
      * @param $value
      */
     public function setContentAttribute($value)
@@ -33,6 +39,8 @@ class Post extends Model
     }
     
     /**
+     * 读取数据时，转义 content 字段实体字符
+     *
      * @param $value
      *
      * @return string
