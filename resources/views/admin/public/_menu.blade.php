@@ -8,6 +8,13 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            {{--分类管理--}}
+            <li class="layui-nav-item {{ active_class(if_route_pattern('admin.categories.*'), 'layui-this') }}">
+                <a href="{{ route('admin.categories.index') }}">
+                    <i class="fa fa-bookmark"></i>
+                    <span>分类管理</span>
+                </a>
+            </li>
             {{--标签管理--}}
             <li class="layui-nav-item {{ active_class(if_route_pattern('admin.tags.*'), 'layui-this') }}">
                 <a href="{{ route('admin.tags.index') }}">

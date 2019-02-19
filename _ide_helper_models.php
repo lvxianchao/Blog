@@ -10,6 +10,25 @@
  */
 
 
+namespace App{
+/**
+ * App\Category
+ *
+ * @property int $id
+ * @property string $name 分类名称
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Category newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Category newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Category query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereUpdatedAt($value)
+ */
+	class Category extends \Eloquent {}
+}
+
 namespace App\Models{
 /**
  * Class Post
@@ -18,9 +37,10 @@ namespace App\Models{
  * @property int $id
  * @property string $title 文章标签
  * @property string $slug 标签翻译，有利于 SEO
- * @property string|null $content 文章内容
+ * @property string $content 文章内容
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Tag[] $tags
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post query()
@@ -43,9 +63,11 @@ namespace App\Models{
  * @property string $name 标签名称
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Post[] $posts
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag relateTags()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Tag whereName($value)
