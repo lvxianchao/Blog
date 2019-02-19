@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('vendor/layui/css/layui.css') }}">
-        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css">
+        <link rel="stylesheet" href="{{ asset('vendor/semantic/semantic.min.css') }}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
         @yield('styles')
@@ -29,7 +28,7 @@
         <!-- Scripts -->
         <script src="{{ asset('vendor/layui/layui.all.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
-        <script src="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script src="{{ asset('vendor/semantic/semantic.min.js') }}"></script>
         <script>
             $(function () {
                 // 鼠标悬浮提示
