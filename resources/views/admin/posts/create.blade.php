@@ -32,7 +32,7 @@
 
                 <div class="form-group">
                     <label for="name">内容</label>
-                    <input type="text" class="form-control" name="content" id="editor" value="{{ old('content') }}">
+                    <textarea name="content" id="editor" cols="30" rows="10">{{ old('content') }}</textarea>
                 </div>
 
                 <div class="row">
