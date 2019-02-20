@@ -5,6 +5,7 @@ Route::get('/admin/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/admin/login', 'Auth\LoginController@login');
 Route::post('/admin/logout', 'Auth\LoginController@logout')->name('logout');
 
+// 后台路由
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // 修改密码
     Route::patch('password', 'Auth\ResetPasswordController@reset')->name('password');
@@ -18,3 +19,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('posts', 'Admin\PostController')->names('posts');
     Route::get('posts/{post}/{slug?}', 'Admin\PostController@show')->name('posts.show');
 });
+
+// 首页路由
+Route::get('/', 'HomeController@index')->name('home.index');

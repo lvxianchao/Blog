@@ -1,0 +1,25 @@
+@import "~font-awesome/scss/font-awesome";
+
+#app {
+    //取消链接下划线
+    a {
+        text-decoration: none;
+    }
+
+    //导航背景色
+    .navbar-background-color {
+        background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+
+        //LOGO 图片
+        .logo-image {
+            width: 45px;
+            height: auto;
+            vertical-align: middle;
+            padding-bottom: 6px;
+        }
+
+        .logo-desc {
+            font-size: 2rem;
+        }
+    }
+}
