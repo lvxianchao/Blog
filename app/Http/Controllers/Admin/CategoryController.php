@@ -74,6 +74,10 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        if ($category->posts->count()) {
+            return back()->with('danger', '此分类已关联到文章，无法删除');
+        }
+        
         $category->delete();
         
         return back()->with('success', '删除分类成功');

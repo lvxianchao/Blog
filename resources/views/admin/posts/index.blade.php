@@ -4,23 +4,25 @@
 
 @section('content')
     @include('admin.public._tab', ['route' => 'posts', 'title' => '文章'])
-
+    
     <table class="table table-bordered table-hover text-center">
         <tr>
             <th>ID</th>
             <th>标题</th>
+            <th>分类</th>
             <th>关联标签数量</th>
             <th>创建时间</th>
             <th>修改时间</th>
             <th>操作</th>
         </tr>
-
+        
         @foreach($posts as $post)
             <tr>
                 <td>{{ $post->id }}</td>
                 <td>
                     <a href="{{ $post->link() }}">{{ $post->title }}</a>
                 </td>
+                <td>{{ $post->category->name }}</td>
                 <td>{{ $post->tags->count() }}</td>
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
@@ -35,7 +37,7 @@
             </tr>
         @endforeach
     </table>
-
+    
     <div class="d-md-flex justify-content-center">{{ $posts->links() }}</div>
 @endsection
 

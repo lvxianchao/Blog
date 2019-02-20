@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Category;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -16,7 +17,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'slug', 'content'];
+    protected $fillable = ['title', 'slug', 'content', 'category_id'];
     
     /**
      * 关联标签模型
@@ -60,5 +61,15 @@ class Post extends Model
     public function link(array $params = [])
     {
         return route('admin.posts.show', array_merge([$this->id, $this->slug], $params));
+    }
+    
+    /**
+     * 关联分类模型
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

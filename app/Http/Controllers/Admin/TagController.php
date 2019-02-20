@@ -74,6 +74,10 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
+        if ($tag->posts->count()) {
+            return back()->with('danger', '此标签已关联文章，无法删除');
+        }
+        
         $tag->delete();
         
         return back()->with('success', '删除标签成功');

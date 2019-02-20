@@ -4,18 +4,28 @@
 
 @section('content')
     @include('admin.public._tab', ['route' => 'posts', 'title' => '文章'])
-
+    
     <div class="row">
         <div class="col-md-8 mx-md-auto">
             <form action="{{ route('admin.posts.update', $post) }}" method="post" autocomplete="off">
                 @csrf
                 @method('PATCH')
-
+                
                 <div class="form-group">
                     <label for="name">标题</label>
                     <input type="text" class="form-control" name="title" id="title" value="{{ $post->title }}" required>
                 </div>
-
+                
+                <div class="form-group">
+                    <label for="category_id">分类</label>
+                    <select name="category_id" id="category_id" class="ui fluid dropdown">
+                        <option value=""></option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" @if($post->category_id == $category->id) selected @endif>{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                
                 <div class="form-group">
                     <label for="name">标签</label>
                     <div class="ui fluid multiple search selection dropdown form-control-sm">
@@ -29,12 +39,12 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="form-group">
                     <label for="name">内容</label>
-                    <textarea name="content" id="editor" cols="30" rows="10">{!! $post->content !!}</textarea>
+                    <textarea name="content" id="editor" cols="30" rows="10">{{ $post->content }}</textarea>
                 </div>
-
+                
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <button class="btn btn-primary w-25">更新</button>
@@ -100,9 +110,8 @@
             $('.ui.dropdown').dropdown({
                 allowAdditions: true,
             });
-
+            
             $('form').on('keydown', function (event) {
-                console.log('fuck');
                 if (event.keyCode === 13) {
                     return false;
                 }

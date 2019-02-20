@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
@@ -36,7 +37,9 @@ class PostController extends Controller
     {
         $tags = Tag::all(['id', 'name']);
         
-        return view('admin.posts.create', compact('tags'));
+        $categories = Category::all();
+        
+        return view('admin.posts.create', compact('tags', 'categories'));
     }
     
     /**
@@ -98,7 +101,9 @@ class PostController extends Controller
         })->toArray();
         $tags_string = implode(',', $tags_string);
         
-        return view('admin.posts.edit', compact('post', 'tags', 'tags_string'));
+        $categories = Category::all();
+        
+        return view('admin.posts.edit', compact('post', 'tags', 'tags_string', 'categories'));
     }
     
     /**

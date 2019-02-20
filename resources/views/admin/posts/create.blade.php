@@ -15,6 +15,16 @@
                     <label for="name">标题</label>
                     <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" required>
                 </div>
+    
+                <div class="form-group">
+                    <label for="category_id">分类</label>
+                    <select name="category_id" id="category_id" class="ui fluid dropdown">
+                        <option value=""></option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <div class="form-group">
                     <label for="name">标签</label>
