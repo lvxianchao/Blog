@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ $tag->id }}</td>
                 <td>{{ $tag->name }}</td>
-                <td>666</td>
+                <td>{{ $tag->posts->count() }}</td>
                 <td>{{ $tag->created_at }}</td>
                 <td>{{ $tag->updated_at }}</td>
                 <td>

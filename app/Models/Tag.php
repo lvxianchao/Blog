@@ -23,16 +23,4 @@ class Tag extends Model
     {
         return $this->belongsToMany(Post::class);
     }
-    
-    /**
-     * 处理关联标签
-     *
-     * @param string $tags
-     *
-     * @return static
-     */
-    public function scopeRelateTags(string $tags)
-    {
-    
-    }
 }
