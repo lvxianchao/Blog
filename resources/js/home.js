@@ -4,7 +4,13 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+window.$ = window.jQuery = require('jquery');
+
+require('materialize-css');
+
+window.AOS = require('aos');
+
+require('lightgallery');
 
 // window.Vue = require('vue');
 
