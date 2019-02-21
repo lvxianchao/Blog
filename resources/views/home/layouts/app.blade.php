@@ -20,12 +20,8 @@
                 </div>
                 
                 @if('github.link')
-                    @include('')
-                    @endif
-                
-                {{--<% if (theme.githubLink && theme.githubLink.enable) { %>--}}
-                {{--<%- partial('_partial/github-link') %>--}}
-                {{--<% } %>--}}
+                    @include('home.layouts._github_link')
+                @endif
             </nav>
         </header>
     </body>

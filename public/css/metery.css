@@ -1,5 +1,4 @@
 /*全局基础样式*/
-
 /*小屏幕下(手机类)的样式*/
 @media only screen and (max-width: 601px) {
     .container {
@@ -122,12 +121,14 @@ pre[class*="language-"] {
     margin: .5em 0;
 }
 
-code[class*="language-"], pre[class*="language-"] {
+code[class*="language-"],
+pre[class*="language-"] {
     color: #e8eaf6;
     white-space: pre-wrap !important;
 }
 
-b, strong {
+b,
+strong {
     font-weight: bold;
 }
 
@@ -403,7 +404,8 @@ header .go-back i {
 }
 
 @-webkit-keyframes rainbow {
-    0%, 100% {
+    0%,
+    100% {
         background: rgba(156, 39, 176, 0.75);
         background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
         background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
@@ -442,7 +444,8 @@ header .go-back i {
 }
 
 @keyframes rainbow {
-    0%, 100% {
+    0%,
+    100% {
         background: rgba(156, 39, 176, 0.75);
         background: linear-gradient(45deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
         background: -moz-linear-gradient(135deg, rgba(156, 39, 176, 0.75) 0%, rgba(156, 39, 176, 0.65) 100%);
@@ -489,7 +492,9 @@ header .go-back i {
     margin-bottom: 40px;
 }
 
-.dream .title, .music-player .title, .video-player .title {
+.dream .title,
+.music-player .title,
+.video-player .title {
     margin-bottom: 20px;
     font-size: 2rem;
     font-weight: 700;
@@ -500,13 +505,15 @@ header .go-back i {
     font-size: 1.1rem;
 }
 
-.music-player, .video-player {
+.music-player,
+.video-player {
     margin-top: 10px;
     margin-bottom: 50px;
 }
 
-.music, .dplayer-video {
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2), 0 10px 20px -12px rgba(0, 0, 0, .5) !important;
+.music,
+.dplayer-video {
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,.2), 0 10px 20px -12px rgba(0,0,0,.5) !important;
 }
 
 #recommend-sections {
@@ -786,7 +793,7 @@ article .article-tags .chip {
 
 /* 修改小屏幕下文章详情table样式. */
 @media only screen and (max-width: 550px) {
-    #articleContent table {
+    #articleContent table{
         table-layout: fixed;
     }
 }
@@ -799,7 +806,9 @@ article .article-tags .chip {
 }
 
 #artDetail .card {
-    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15),
+    0 5px 15px rgba(0, 0, 0, .07),
+    0 2px 5px -5px rgba(0, 0, 0, .1) !important;
 }
 
 #artDetail .tag-cate {
@@ -933,7 +942,7 @@ article .article-tags .chip {
     color: #42b983;
     font-weight: 500;
     text-decoration: underline;
-    word-wrap: break-word;
+    word-wrap:break-word;
 }
 
 #articleContent .img-item {
@@ -949,17 +958,19 @@ article .article-tags .chip {
 #articleContent video {
     display: block;
     margin: 30px auto;
-    box-shadow: 0 5px 35px 0 rgba(0, 0, 0, .2), 0 10px 35px -11px rgba(0, 0, 0, .6);
+    box-shadow: 0 5px 35px 0 rgba(0,0,0,.2), 0 10px 35px -11px rgba(0,0,0,.6);
     cursor: pointer;
 }
 
-#articleContent ol, ul {
+#articleContent ol,
+ul {
     display: block;
     padding-left: 2em;
     word-spacing: 0.05rem;
 }
 
-#articleContent ul li, ol li {
+#articleContent ul li,
+ol li {
     display: list-item;
     line-height: 1.8rem;
     font-size: 1rem;
@@ -991,7 +1002,7 @@ table tr:nth-child(2n), thead {
     min-width: 80px;
 }
 
-#articleContent[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+#articleContent [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
     position: inherit;
     margin-left: -1.3rem;
     margin-right: 0.4rem;
@@ -1267,7 +1278,8 @@ table tr:nth-child(2n), thead {
         font-size: 1rem;
     }
 
-    .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+    .cd-timeline-content .cd-read-more,
+    .cd-timeline-content .cd-date {
         font-size: 0.875rem;
     }
 }
@@ -1277,6 +1289,7 @@ table tr:nth-child(2n), thead {
         margin-left: 0;
         padding: 0;
         width: 45%;
+
     }
 
     .cd-timeline-content::before {
@@ -1316,6 +1329,7 @@ table tr:nth-child(2n), thead {
 }
 
 /* about page styles. */
+
 .about-container {
     width: 90%;
     max-width: 1225px;
@@ -1414,11 +1428,17 @@ table tr:nth-child(2n), thead {
     color: #999;
 }
 
-.post-charts, .my-projects, .my-skills, .post-charts {
+.post-charts,
+.my-projects,
+.my-skills,
+.post-charts {
     padding: 3.8rem 1.5rem 0.8rem 1.5rem;
 }
 
-.post-charts, .title, .my-projects .title, .my-skills .title, .my-gallery .title {
+.post-charts, .title,
+.my-projects .title,
+.my-skills .title,
+.my-gallery .title {
     font-size: 2rem;
     margin-bottom: 2.25rem;
 }
@@ -1682,7 +1702,7 @@ footer .copy-right {
 }
 
 .img-shadow {
-    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .2), 0 10px 30px -11px rgba(0, 0, 0, .6)
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.2), 0 10px 30px -11px rgba(0,0,0,.6)
 }
 
 .img-margin {

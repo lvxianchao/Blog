@@ -1,4 +1,4 @@
-<a href="#" data-activates="mobile-nav" class="button-collapse">
+<a href="javascript:void(0);" data-activates="mobile-nav" class="button-collapse">
     <i class="fa fa-navicon"></i>
 </a>
 
