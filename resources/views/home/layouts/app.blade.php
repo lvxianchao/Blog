@@ -8,6 +8,8 @@
         
         @yield('content')
         
+        @include('home.layouts._footer')
+        
         @include('')
     </body>
     
