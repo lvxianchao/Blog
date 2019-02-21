@@ -1,4 +1,4 @@
-<div class="side-nav" id="mobile-nav">
+<div class="sidenav" id="mobile-nav">
     
     <div class="mobile-head bg-color">
         <img src="{{ asset('images/logo.png') }}" class="logo-img circle responsive-img">

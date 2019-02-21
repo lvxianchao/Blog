@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-window.$ = window.jQuery = require('jquery');
+// window.$ = window.jQuery = require('jquery');
 
 require('materialize-css');
 
@@ -12,7 +12,7 @@ window.AOS = require('aos');
 
 require('lightgallery');
 
-require('masonry-layout');
+// require('masonry-layout');
 
 // window.Vue = require('vue');
 

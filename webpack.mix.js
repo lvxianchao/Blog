@@ -18,4 +18,6 @@ mix.js('resources/js/app.js', 'public/js')
 
     .js('resources/js/home.js', 'public/js')
     .sass('resources/sass/home.scss', 'public/css')
+
+    .version()
 ;

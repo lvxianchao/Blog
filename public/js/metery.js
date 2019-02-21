@@ -13,7 +13,7 @@ $(function () {
     articleCardHover();
 
     /*菜单切换*/
-    $('.button-collapse').sideNav();
+    $('.sidenav').sidenav();
 
     /* 修复文章卡片 div 的宽度. */
     let fixPostCardWidth = function (srcId, targetId) {
@@ -100,11 +100,11 @@ $(function () {
                 this.insertAdjacentElement('afterend', captionDiv)
             }
         });
-        $('#articleContent, #myGallery').lightGallery({
-            selector: '.img-item',
-            // 启用字幕
-            subHtmlSelectorRelative: true
-        });
+        // $('#articleContent, #myGallery').lightGallery({
+        //     selector: '.img-item',
+        //     // 启用字幕
+        //     subHtmlSelectorRelative: true
+        // });
 
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');

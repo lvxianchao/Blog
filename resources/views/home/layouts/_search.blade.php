@@ -11,5 +11,5 @@
 
 <script src="{{ asset('js/search.js') }}"></script>
 <script type="text/javascript">
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    // searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 </script>
