@@ -12,6 +12,8 @@ window.AOS = require('aos');
 
 require('lightgallery');
 
+require('masonry-layout');
+
 // window.Vue = require('vue');
 
 /**

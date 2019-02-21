@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    
-    @include('home.layouts._head')
+    <head>
+        @include('home.layouts._head')
+    </head>
     
     <body>
         @include('home.layouts._header')
@@ -10,14 +11,12 @@
         
         @include('home.layouts._footer')
         
-        @include('')
+        @include('home.layouts._search')
+        
+        @include('home.layouts._back_top')
+        
+        <script src="{{ asset('js/home.js') }}"></script>
+        <script src="{{ asset('js/scrollProgress.min.js') }}"></script>
+        <script src="{{ asset('js/metery.js') }}"></script>
     </body>
-    
-    <script>
-        $(function () {
-            $(document).ready(function () {
-                $('.sidenav').sidenav();
-            });
-        });
-    </script>
 </html>
