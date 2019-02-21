@@ -1,5 +1,5 @@
 <header class="navbar-fixed">
-    <nav class="navbar-background-color">
+    <nav class="navbar-background-color navbar-background-transparent">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="{{ route('home.index') }}" class="brand-logo waves-effect waves-light">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </nav>
-    
+
     <ul class="sidenav" id="mobile-demo">
         @include('home.layouts._navication')
     </ul>

@@ -12,10 +12,13 @@
     </head>
     <body>
         <div id="app">
+            {{--导航--}}
             @include('home.layouts._navbar')
+
+            @yield('content')
         </div>
     </body>
-    
+
     <script>
         $(function () {
             $(document).ready(function () {
