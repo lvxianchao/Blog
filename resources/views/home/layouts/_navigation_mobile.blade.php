@@ -23,7 +23,6 @@
     </ul>
     
     <div class="social-link">
-        <%- partial('_partial/social-link') %>
-        @include('')
+        @include('home.layouts._social_link')
     </div>
 </div>
